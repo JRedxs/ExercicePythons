@@ -3,9 +3,6 @@ import tkinter as tk
 import datetime
 import locale
 locale.setlocale(locale.LC_TIME, '')
-# myDatetime = datetime.datetime.now()
-# myString = myDatetime.strftime('%Y-%m-%d %H:%M:%S')
-# print(myString)
 
 Fenetre = tk.Tk()
 Fenetre.geometry("300x500")
