@@ -10,7 +10,6 @@ Fenetre.title("Horaire des pays")
 Fenetre.configure(bg="black")
 Fenetre.resizable(width=False, height=False)
 
-
 date = datetime.date.today()
 day = datetime.date.today()
 day1 = day.strftime('%A')
