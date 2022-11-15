@@ -1,19 +1,40 @@
+#############################################################
+#                                                           #
+#                   VANDEVELDE ENZO                         #
+#                   RYCKEBUSCH REMI                         #
+#                      12-11-2022                           #
+#                                                           #
+#                                                           #
+#                                                           #
+#############################################################
+
+
 from tkinter import *
 from langdetect import detect
 
+
+
+
+
 root = Tk()
-root.geometry("450x450")
+root.geometry("640x550")
 root.title("Détecteur de langue")
 
 def Take_input():
 	INPUT = inputtxt.get("1.0", "end-1c")
-	print(INPUT)
+	print(" Vous avez entre : " ,INPUT, " - La langue detectee est : ", detect(INPUT))
 	if(INPUT):
 		Output.insert(END, detect(INPUT))
 	else:
 		Output.insert(END, "Il faut entrer du texte pour que cela fonctionne ! :) ")
+
+def delete():
+		inputtxt.delete("1.0",'end')
+		Output.delete("1.0",'end')
+
 	
 l = Label(text =" Entrer votre Phrase / mot / paragraphe ici : ")
+
 inputtxt = Text(root, height = 10,
 				width = 50,
 				bg = "light yellow")
@@ -31,16 +52,17 @@ Button_Push_Text= Button(root, height = 2,
 Button_Clear_Fields = Button(root, height = 2,
 				width = 20,
 				text ="Clear Fields",
-				command = lambda:Take_input(),
+				command = delete,
 				)
 
 l.pack()
-inputtxt.pack()
+inputtxt.pack(pady=10, padx=5)
 
-Output.pack()
-Button_Push_Text.pack()
+Output.pack(pady=10, padx=5)
+Button_Push_Text.pack(pady=10, padx= 5,
+)
 # Button_Push_Text.grid(row=3)
-Button_Clear_Fields.pack()
+Button_Clear_Fields.pack(pady=10, padx=5)
 # Button_Clear_Fields.grid(row=3)
 
 mainloop()
